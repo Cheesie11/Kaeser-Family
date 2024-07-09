@@ -5,16 +5,20 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="125" height="125" />
+    <div class="logo">
+      <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="125" height="125" />
+      <h1>Kaeser Family</h1>
+    </div>
 
     <div class="wrapper">
-      <HelloWorld msg="Family Kaeser" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/list">List</RouterLink>
       </nav>
+    </div>
+    <div class="options">
+      <h1>Yo</h1>
     </div>
   </header>
 
@@ -23,6 +27,25 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <style scoped>
 header {
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+  max-height: 100vh;
+}
+
+header .logo {
+  background-color: #9e2929;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.wrapper {
+  height: auto; /* Ensures the div grows with its content */
+  max-height: 100%; /* Optional: Prevents the div from growing too large */
+  /* Additional styles to ensure it only takes up necessary space */
+}
+/* header {
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -82,5 +105,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
